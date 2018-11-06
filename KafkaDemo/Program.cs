@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace KafkaDemo
+namespace KafkaDemo_Product
 {
     class Program
     {
