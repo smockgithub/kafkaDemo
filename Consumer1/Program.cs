@@ -21,7 +21,7 @@ namespace Consumer1
 
             using (var c = new Consumer<Ignore, string>(conf))
             {
-                c.Subscribe("my-topic");
+                c.Subscribe("my-topic");//订阅模式
 
                 bool consuming = true;
                 // The client will automatically recover from non-fatal errors. You typically
