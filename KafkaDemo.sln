@@ -5,7 +5,9 @@ VisualStudioVersion = 15.0.28010.2041
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "KafkaDemo_Producer", "KafkaDemo\KafkaDemo_Producer.csproj", "{B83398A5-0E53-423A-88F8-08766719B79A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Consumer1", "Consumer1\Consumer1.csproj", "{64E5826E-6333-4E51-87E5-B3CAE8CB3084}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Consumer1", "Consumer1\Consumer1.csproj", "{64E5826E-6333-4E51-87E5-B3CAE8CB3084}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "mongod", "mongod\mongod.csproj", "{6F577D50-5E13-4444-A998-6CB0B4777AC2}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +23,10 @@ Global
 		{64E5826E-6333-4E51-87E5-B3CAE8CB3084}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{64E5826E-6333-4E51-87E5-B3CAE8CB3084}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{64E5826E-6333-4E51-87E5-B3CAE8CB3084}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6F577D50-5E13-4444-A998-6CB0B4777AC2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6F577D50-5E13-4444-A998-6CB0B4777AC2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6F577D50-5E13-4444-A998-6CB0B4777AC2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6F577D50-5E13-4444-A998-6CB0B4777AC2}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
