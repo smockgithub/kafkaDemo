@@ -7,9 +7,12 @@ namespace Consumer1
     {
         static void Main(string[] args)
         {
+            Console.WriteLine("请输入GroupId：如果不输入，默认为test-consumer-group");
+            var groupId = Console.ReadLine();
+
             var conf = new ConsumerConfig
             {
-                GroupId = "test-consumer-group",
+                GroupId = groupId,
                 BootstrapServers = "119.23.104.248:9092",
                 // Note: The AutoOffsetReset property determines the start offset in the event
                 // there are not yet any committed offsets for the consumer group for the
