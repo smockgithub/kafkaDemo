@@ -9,6 +9,17 @@ namespace Consumer1
         {
             Console.WriteLine("请输入GroupId：如果不输入，默认为test-consumer-group");
             var groupId = Console.ReadLine();
+            if (string.IsNullOrWhiteSpace(groupId))
+            {
+                groupId = "test-consumer-group";
+            }
+
+            Console.WriteLine("请输入TopicName：如果不输入，默认为my-topic");
+            var topicName = Console.ReadLine();
+            if (string.IsNullOrWhiteSpace(topicName))
+            {
+                topicName = "my-topic";
+            }
 
             var conf = new ConsumerConfig
             {
@@ -24,7 +35,7 @@ namespace Consumer1
 
             using (var c = new Consumer<Ignore, string>(conf))
             {
-                c.Subscribe("my-topic");//订阅模式
+                c.Subscribe(topicName);//订阅模式
 
                 bool consuming = true;
                 // The client will automatically recover from non-fatal errors. You typically

@@ -14,8 +14,10 @@ namespace KafkaDemo_Producer
 
         public static async Task<string> producer2()
         {
-            string brokerList = "119.23.104.248:9092";
+            string brokerList = "";
             string topicName = "my-topic";
+
+            TopicPartition topicPartition = new TopicPartition(topicName, new Partition(0));//指定Partition通道
 
             var config = new ProducerConfig { BootstrapServers = brokerList };
 
@@ -73,7 +75,7 @@ namespace KafkaDemo_Producer
                         // Awaiting the asynchronous produce request below prevents flow of execution
                         // from proceeding until the acknowledgement from the broker is received.
                         var deliveryReport = await producer.ProduceAsync(topicName, new Message<string, string> { Key = key, Value = val });
-                        Console.WriteLine($"delivered to: {deliveryReport.TopicPartitionOffset}");
+                        Console.WriteLine($"delivered to: {deliveryReport.TopicPartitionOffset}"); 
                     }
                     catch (KafkaException e)
                     {
@@ -91,7 +93,7 @@ namespace KafkaDemo_Producer
 
         public static void producer1()
         {
-            var config = new ProducerConfig { BootstrapServers = "119.23.104.248:9092" };
+            var config = new ProducerConfig { BootstrapServers = "" };
 
             Action<DeliveryReportResult<Null, string>> handler = r =>
             Console.WriteLine(!r.Error.IsError
