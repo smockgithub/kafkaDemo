@@ -14,17 +14,24 @@ namespace Consumer1
                 groupId = "test-consumer-group";
             }
 
-            Console.WriteLine("请输入TopicName：如果不输入，默认为my-topic");
+            Console.WriteLine("请输入TopicName：如果不输入，默认为aaaa");
             var topicName = Console.ReadLine();
             if (string.IsNullOrWhiteSpace(topicName))
             {
-                topicName = "my-topic";
+                topicName = "aaaa";
+            }
+
+            Console.WriteLine("请输入服务器地址");
+            var serviceIp = Console.ReadLine();
+            if (string.IsNullOrWhiteSpace(serviceIp))
+            {
+                return;
             }
 
             var conf = new ConsumerConfig
             {
                 GroupId = groupId,
-                BootstrapServers = "119.23.104.248:9092",
+                BootstrapServers = serviceIp,
                 // Note: The AutoOffsetReset property determines the start offset in the event
                 // there are not yet any committed offsets for the consumer group for the
                 // topic/partitions of interest. By default, offsets are committed

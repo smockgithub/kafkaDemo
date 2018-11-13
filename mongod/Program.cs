@@ -27,7 +27,7 @@ namespace mongod
 
         public static async Task GetMongoDbByPersonName(string name)
         {
-            var client = new MongoClient("mongodb://119.23.104.248:27017");
+            var client = new MongoClient("");
             var database = client.GetDatabase("foo");
             var collection = database.GetCollection<Person>("bar");
             
@@ -44,7 +44,7 @@ namespace mongod
 
         public static async Task InsertMongodbByPersion(Person p)
         {
-            var client = new MongoClient("mongodb://119.23.104.248:27017");
+            var client = new MongoClient("");
             var database = client.GetDatabase("foo");
             var collection = database.GetCollection<Person>("bar");
             await collection.InsertOneAsync(new Person { Name = p.Name });
